@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pressure Graph</title>
+</head>
+<body>
+    <h2>Pressure Data Across Cities</h2>
+
+    {% if graph_url %}
+        <img src="{{ url_for('static', filename=graph_url.split('/')[-1]) }}" alt="Pressure Graph">
+    {% else %}
+        <p>No data available. Please check the API or city data.</p>
+    {% endif %}
+
+    <br><br>
+    <a href="/">Go Back</a>
+</body>
+</html>
